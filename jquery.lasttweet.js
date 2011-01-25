@@ -40,15 +40,7 @@
       if (s.loading_text) $(elem).append(loading);
       $(elem).bind("load", function(){
         $.getJSON(build_url(), function(data){
-          console.debug(data.status);
-          var text = 
-          '<span class="' 
-          + s.tweet_class 
-          + '">' 
-          + $.linkify(
-            data.status.text
-            ) 
-            + '</span>';
+          var text = '<span class="' + s.tweet_class + '">'  + $.linkify(data.status.text) + '</span>';
 
             $(elem).html(text);
           });
